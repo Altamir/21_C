@@ -56,7 +56,6 @@ namespace Jogo21
                     retorno.Append(valor.ToString());
                     break;
             }
-
             return retorno.ToString();
         }
 
