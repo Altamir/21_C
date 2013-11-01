@@ -10,7 +10,9 @@ namespace UnitTestProjectJogo21
 
         private  Carta carta;
 
-        public TestCarta()
+       
+        [TestInitialize]
+        public void SetUp()
         {
             carta = new Carta(1, NAIPE.Copas);
         }
@@ -19,7 +21,7 @@ namespace UnitTestProjectJogo21
         [TestMethod]
         public void Testa_Retorno_Naipe_Copas()
         {
-            NAIPE esperado = NAIPE.Copas;
+            var esperado = NAIPE.Copas;
 
             Assert.AreEqual(esperado, carta.Naipe);
         }
@@ -39,9 +41,5 @@ namespace UnitTestProjectJogo21
 
             Assert.AreEqual(esperada, carta.ToString());
         }
-
-
-
-
     }
 }
