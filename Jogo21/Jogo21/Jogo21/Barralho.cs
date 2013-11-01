@@ -8,7 +8,7 @@ namespace Jogo21
     public class Barralho : JogoDeCartas
     {
 
-
+        public int Tamanho { get; set; }
 
         public void ordenar()
         {
@@ -29,5 +29,7 @@ namespace Jogo21
         {
             throw new NotImplementedException();
         }
+        
+
     }
 }
