@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text;
 
 namespace Jogo21
 {
@@ -52,7 +53,12 @@ namespace Jogo21
 
         public string listarBaralho()
         {
-            throw new NotImplementedException();
+            StringBuilder retorno = new StringBuilder();
+            foreach (Carta carta in cartas)
+            {
+                retorno.Append(carta.ToString()+"\n");
+            }
+            return retorno.ToString();
         }
 
 

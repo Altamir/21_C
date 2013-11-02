@@ -36,27 +36,7 @@ namespace Jogo21
 
         private string GeraStringValor()
         {
-            StringBuilder retorno = new StringBuilder();
-
-            switch (valor)
-            {
-                case 1:
-                    retorno.Append("Ás");
-                    break;
-                case 11:
-                    retorno.Append("Velete");
-                    break;
-                case 12:
-                    retorno.Append("Dama");
-                    break;
-                case 13:
-                    retorno.Append("Rei");
-                    break;
-                default:
-                    retorno.Append(valor.ToString());
-                    break;
-            }
-            return retorno.ToString();
+            return CartasNomes.NomeCartaPor(Valor);
         }
 
     }

@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Barralho.cs" />
     <Compile Include="Carta.cs" />
+    <Compile Include="CartasNomes.cs" />
     <Compile Include="JogoDeCartas.cs" />
     <Compile Include="NAIPE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

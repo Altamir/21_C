@@ -23,5 +23,12 @@ namespace UnitTestProjectJogo21
             var esperado = 52;
             Assert.AreEqual(esperado, baralho.Tamanho);
         }
+
+        [TestMethod]
+        public void TestaListarCartasOrdenadas()
+        {
+            var retorno = StringEsperadas.BaralhoOrdenado();
+            Assert.AreEqual(retorno,baralho.listarBaralho());
+        }
     }
 }
