@@ -18,10 +18,9 @@ namespace UnitTestProjectJogo21
         }
 
         [TestMethod]
-        public void RetornaQtCartasDoBaralho()
+        public void RetornaQtCartasDoBaralho_Igual_52()
         {
             var esperado = 52;
-
             Assert.AreEqual(esperado, baralho.Tamanho);
         }
     }
