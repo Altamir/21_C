@@ -8,7 +8,32 @@ namespace Jogo21
     public class Barralho : JogoDeCartas
     {
 
-        public int Tamanho { get; set; }
+        private List<Carta> cartas = new List<Carta>();
+        public int Tamanho { get; private set; }
+
+
+        public Barralho()
+        {
+            this.Tamanho = 0;
+            CriaCartas();
+        }
+
+        private void CriaCartas()
+        {
+            CriaCartasDe(NAIPE.Copas);
+            CriaCartasDe(NAIPE.Espadas);
+            CriaCartasDe(NAIPE.Ouros);
+            CriaCartasDe(NAIPE.Paus);
+        }
+
+        private void CriaCartasDe(NAIPE naipe)
+        {
+            for (int i = 1; i < 14; i++)
+            {
+                cartas.Add(new Carta(i, naipe));
+                Tamanho++;
+            }
+        }
 
         public void ordenar()
         {
@@ -29,7 +54,7 @@ namespace Jogo21
         {
             throw new NotImplementedException();
         }
-        
+
 
     }
 }
