@@ -25,10 +25,29 @@ namespace UnitTestProjectJogo21
         }
 
         [TestMethod]
-        public void TestaListarCartasOrdenadas()
+        public void Test_ListarCartasEmbaralhadas()
         {
-            var esperada = StringEsperadas.BaralhoOrdenado();
-            Assert.AreEqual(esperada,baralho.listarBaralho());
+            baralho.embaralhar();
+            Assert.AreNotEqual(StringEsperadas.BaralhoOrdenado(), baralho.listarBaralho());
+        }
+
+        [TestMethod]
+        public void Test_ordenarCartas()
+        {
+            baralho.ordenar();
+            Assert.AreEqual(StringEsperadas.BaralhoOrdenado(), baralho.listarBaralho());
+        }
+
+        [TestMethod]
+        public void Test_ListarCartasOrdenadas()
+        {
+            Assert.AreEqual(StringEsperadas.BaralhoOrdenado(), baralho.listarBaralho());
+        }
+
+        [TestMethod]
+        public void Test_DarCartaBaralhoOrdenado()
+        {
+            Assert.AreEqual("Ás de Copas", baralho.darCartas().ToString());
         }
     }
 }

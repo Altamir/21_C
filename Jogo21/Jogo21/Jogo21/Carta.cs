@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Jogo21
 {
-    public class Carta
+    public class Carta : IComparable<Carta>
     {
         private int valor;
         private NAIPE naipe;
@@ -44,5 +44,18 @@ namespace Jogo21
             return CartasNomes.NomeCartaPor(Valor);
         }
 
+
+        public int CompareTo(Carta outraCarta)
+        {
+            if(this.Valor < outraCarta.Valor)
+            {
+                return -1;
+            }
+            if (this.Valor > outraCarta.Valor)
+            {
+                return 1;
+            }
+            return 0;
+        }
     }
 }

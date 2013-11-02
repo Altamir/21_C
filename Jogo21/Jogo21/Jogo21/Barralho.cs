@@ -10,13 +10,18 @@ namespace Jogo21
     {
 
         private List<Carta> cartas = new List<Carta>();
-        public int Tamanho { get; private set; }
+        private int topo;
 
 
         public Barralho()
         {
-            this.Tamanho = 0;
+            topo = -1;
             CriaCartas();
+        }
+
+        public int Tamanho
+        {
+            get { return cartas.Count;}
         }
 
         private void CriaCartas()
@@ -32,23 +37,23 @@ namespace Jogo21
             for (int i = 1; i < 14; i++)
             {
                 cartas.Add(new Carta(i, naipe));
-                Tamanho++;
             }
         }
 
         public void ordenar()
         {
-            throw new NotImplementedException();
+            cartas =  OrdenadorDeBaralho(cartas);
         }
 
         public void embaralhar()
         {
-            throw new NotImplementedException();
+            cartas.Sort();
         }
 
         public Carta darCartas()
         {
-            throw new NotImplementedException();
+            topo++;
+            return cartas[topo];
         }
 
         public string listarBaralho()
@@ -56,11 +61,50 @@ namespace Jogo21
             StringBuilder retorno = new StringBuilder();
             foreach (Carta carta in cartas)
             {
-                retorno.Append(carta.ToString()+"\n");
+                retorno.Append(carta.ToString() + "\n");
             }
             return retorno.ToString();
         }
 
 
+        public static List<Carta> OrdenadorDeBaralho(List<Carta> cartasDoBaralho)
+        {
+            List<Carta> baralhoDeCopas = new List<Carta>();
+            List<Carta> baralhoDeEspadas = new List<Carta>();
+            List<Carta> baralhoDeOuros = new List<Carta>();
+            List<Carta> baralhoDePaus = new List<Carta>();
+
+            foreach (Carta carta in cartasDoBaralho)
+            {
+                switch (carta.Naipe)
+                {
+                    case NAIPE.Copas:
+                        baralhoDeCopas.Add(carta);
+                        break;
+                    case NAIPE.Ouros:
+                        baralhoDeOuros.Add(carta);
+                        break;
+                    case NAIPE.Espadas:
+                        baralhoDeEspadas.Add(carta);
+                        break;
+                    case NAIPE.Paus:
+                        baralhoDePaus.Add(carta);
+                        break;
+                }
+            }
+
+            baralhoDeCopas.Sort();
+            baralhoDeOuros.Sort();
+            baralhoDeOuros.Sort();
+            baralhoDeOuros.Sort();
+
+            List<Carta> ordenadas = new List<Carta>();
+            ordenadas.AddRange(baralhoDeCopas);
+            ordenadas.AddRange(baralhoDeEspadas);
+            ordenadas.AddRange(baralhoDeOuros);
+            ordenadas.AddRange(baralhoDePaus);
+            return ordenadas;
+
+        }
     }
 }
