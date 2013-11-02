@@ -34,5 +34,9 @@ namespace Jogo21
             return retorno.ToString();
         }
 
+        public static String NomeCartaPor(NAIPE naipe)
+        {
+            return naipe.ToString();
+        }
     }
 }

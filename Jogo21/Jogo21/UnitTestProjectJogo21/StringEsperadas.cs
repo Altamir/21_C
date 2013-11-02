@@ -26,7 +26,7 @@ namespace UnitTestProjectJogo21
             for (int valor = 1; valor < 14; valor++)
             {
                 retorno.Append(CartasNomes.NomeCartaPor(valor) +
-                    " de " + naipe.ToString() + "\n");
+                    " de " + CartasNomes.NomeCartaPor(naipe) + "\n");
             }
         }
     }

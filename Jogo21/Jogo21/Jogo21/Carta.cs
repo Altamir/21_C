@@ -31,7 +31,12 @@ namespace Jogo21
 
         public override string ToString()
         {
-            return GeraStringValor() + " de " + naipe.ToString();
+            return GeraStringValor() + " de " + GeraStringNaipe();
+        }
+
+        private string GeraStringNaipe()
+        {
+            return CartasNomes.NomeCartaPor(Naipe);
         }
 
         private string GeraStringValor()

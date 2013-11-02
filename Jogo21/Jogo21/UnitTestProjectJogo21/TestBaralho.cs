@@ -27,8 +27,8 @@ namespace UnitTestProjectJogo21
         [TestMethod]
         public void TestaListarCartasOrdenadas()
         {
-            var retorno = StringEsperadas.BaralhoOrdenado();
-            Assert.AreEqual(retorno,baralho.listarBaralho());
+            var esperada = StringEsperadas.BaralhoOrdenado();
+            Assert.AreEqual(esperada,baralho.listarBaralho());
         }
     }
 }
