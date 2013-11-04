@@ -37,6 +37,7 @@ namespace Jogo21
             for (int i = 1; i < 14; i++)
             {
                 cartas.Add(new Carta(i, naipe));
+
             }
         }
 
