@@ -48,6 +48,7 @@ namespace UnitTestProjectJogo21
         public void Test_DarCartaBaralhoOrdenado()
         {
             Assert.AreEqual("Ás de Copas", baralho.darCartas().ToString());
+            Assert.AreEqual("2 de Copas",baralho.darCartas().ToString());
         }
     }
 }
