@@ -112,5 +112,20 @@ namespace Jogo21
             return ordenadas;
 
         }
+
+        public static List<Carta> Embaralha(List<Carta> baralho)
+        {
+            Carta cartaDeTroca;
+            Random rd = new Random();
+            int indiceSorteado = 0;
+            foreach (Carta carta in baralho)
+            {
+                indiceSorteado = rd.Next();
+
+            }
+
+
+            return baralho;
+        }
     }
 }
