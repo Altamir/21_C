@@ -15,7 +15,7 @@ namespace Jogo21
 
         public Barralho()
         {
-            topo = -1;
+           inicializaTopo();
             CriaCartas();
         }
 
@@ -65,6 +65,11 @@ namespace Jogo21
                 retorno.Append(carta.ToString() + "\n");
             }
             return retorno.ToString();
+        }
+
+        protected void inicializaTopo()
+        {
+            topo = -1;
         }
 
 
